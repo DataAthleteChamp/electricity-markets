@@ -1,76 +1,61 @@
 # Bidding-Language Restrictions and the Price of Anarchy
 
-## Research question
+## Objective
 
-What further effect does a restricted bidding language have on the Price of
-Anarchy (PoA), or a valid PoA bound, when generators cannot bid their true costs?
+This project compares production-cost inefficiency and Price of Anarchy (PoA)
+upper bounds under quadratic-only bidding, with and without cost-bid mismatch.
+The bidding rules remain unchanged; only the true-cost model differs.
 
-The motivating example is block-form true costs with quadratic-only bids.
-Whether this mismatch increases inefficiency is a question to investigate, not
-an assumption.
-
-## Controlled comparison
-
-| Case | True costs | Permitted bids |
+| Case | True production costs | Permitted bids |
 |---|---|---|
-| Matched | Block-form | Block bids capable of expressing the true costs |
-| Restricted | The same block-form costs | Quadratic-only bids |
+| Matched | Quadratic | Quadratic |
+| Mismatch | Block-form | The same quadratic bid family |
 
-Keep the generators, true costs, capacities, demand, pricing, and tie-breaking
-rules the same across the comparison. Change only the permitted bid family.
-Truthful bidding being available in the matched case does not imply that it is
-an equilibrium.
+Block-form means convex, piecewise-linear total costs with stepwise marginal
+costs, not discrete production quantities.
 
-## Starting scope
+## Research questions
 
-Start with a small, single-node, deterministic market. Agree the model and
-comparison before introducing project code. Networks, storage, forecasting, and
-LLM components are outside the initial scope.
+1. **RQ1:** How does worst-case coarse correlated equilibrium (CCE)
+   production-cost inefficiency differ between quadratic and block-form true
+   costs when generators can submit only quadratic bids?
+2. **RQ2:** How do valid finite-game PoA bounds differ between these cases, and
+   how closely do they track the corresponding worst-CCE inefficiency?
 
-Possible methods are discretizing bids to compute finite-game PoA, deriving or
-adapting a certified upper bound, or comparing both if feasible. The method is
-not yet fixed.
+## Study design
 
-## Quantities to keep separate
+1. **Market:** a stylised, single-node, one-hour case with three generators,
+   700 MW capacity each, and 1,148.4 MW demand. Repeat selected cases with four
+   generators at the same capacity utilisation, following the paper's setup.
+2. **Cost cases:** predefined quadratic/block cost-profile pairs with matching
+   full-capacity costs and a fixed block structure. Keep bid form, coefficient
+   bounds, demand, capacities, pricing, and tie-breaking identical within each
+   pair.
+3. **Benchmarks:** compute each case's physical minimum true production cost and
+   the cheapest dispatch attainable on the bid grid. Report any attainability
+   gap separately from equilibrium losses.
+4. **Equilibria:** compute the exact worst CCE by linear programming on a shared
+   finite grid of positive quadratic bid coefficients, including truthful
+   quadratic profiles. Divide expected true production cost by each case's
+   physical optimum. Check selected cases on a finer grid.
+5. **Bounds:** construct a fixed-deviation generalized-smoothness upper bound
+   using admissible quadratic reference bids and verify every finite-game
+   constraint. The scaled-truthful construction must be adapted for block costs.
 
-- **Physical optimum:** minimum true production cost among feasible dispatches.
-- **Attainable optimum:** minimum true production cost attainable through the
-  permitted bid family and any chosen grid.
-- **Equilibrium inefficiency:** worst equilibrium cost relative to the stated
-  benchmark and solution concept.
+## Expected outputs and scope
 
-Use actual production costs for the social objective, not submitted bid costs,
-market prices, or payments. Separate representational or discretization losses
-from strategic inefficiency.
+Paired plots will compare inefficiency and bounds across the cost cases. A
+bound-versus-inefficiency scatter plot will show how tightly the bound tracks
+the exact finite-game result.
 
-A finite-game result does not automatically apply to continuous bidding. A
-learning trajectory or the worst equilibrium found by restarts is not a proof
-of worst-case PoA.
+No mismatch-severity measurement or scarcity sweep is included, and an increase
+in inefficiency is not assumed. Conclusions concern the selected cost models
+and finite bid grid, not a certified PoA for continuous bidding.
 
-## Decisions before coding
+## Background references
 
-- Define "block-form" precisely, including whether it means piecewise-linear
-  total costs from block marginal costs or a different nonconvex cost model.
-- Specify the quadratic bid form, coefficient bounds, and any discretization.
-- Agree the dispatch, pricing, capacity, and tie-breaking rules.
-- Choose the equilibrium concept and the primary method. For example, an exact
-  worst-CCE LP is possible for a sufficiently small finite bid game.
-
-## Bound validity
-
-The [course algorithm notes](../references/algorithm-explanation.pdf) rely on
-truthful or scaled-truthful bids being feasible deviations. This premise may
-fail in the restricted case. Do not reuse the certificate without establishing
-admissible deviations and a valid proof.
-
-For continuous bounds, a local search that finds no violated constraint is not
-by itself a certificate of global feasibility.
-
-## Team workflow
-
-Use GitHub Issues to assign and discuss the model and assumptions, methods and
-theory, and evaluation and report. Record agreed decisions here and relevant
-reading in the [reference guide](../references/README.md).
-
-Keep the project focused enough for the eight-page report limit stated in
-[Week 1](../lectures/week-01-slides.pdf), PDF page 28.
+[Research paper](../references/how-inefficient-can-an-electricity-market-be.pdf),
+Sections II and IV-A; [algorithm notes](../references/algorithm-explanation.pdf),
+Sections 2-3; [Week 5](../lectures/week-05-slides.pdf), pages 7, 11, and 24;
+Exercise Sheets [3](../exercises/week-03-tasks.pdf) and
+[4](../exercises/week-04-tasks.pdf).

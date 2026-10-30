@@ -27,9 +27,9 @@ code is included at this stage.
 
 **Bidding-Language Restrictions and the Price of Anarchy**
 
-How does market efficiency change when generators cannot express their true
-costs through the permitted bids? The main comparison is between block-form true
-costs with expressive block bids and the same costs with quadratic-only bids.
+The project compares quadratic-only bidding under quadratic versus block-form
+true costs. It studies worst-CCE production-cost inefficiency and valid PoA
+bounds, without a mismatch-severity sweep.
 
 See the [project brief](project/README.md) for the controlled comparison, modelling
 decisions, and scope.
