@@ -50,9 +50,9 @@ decisions, and scope.
 
 ## Access and publication
 
-Keep the repository private until permission to publish the course materials
-and their historical versions is confirmed. Removing a file from the current
-layout does not remove it from Git history.
+This repository is public. Add materials only when you are authorized to share
+them publicly. Removing a file from the current layout does not remove it from
+Git history.
 
 The repository owner manages collaborator invitations. Licensed publisher
 downloads are not included in the shared repository; team members should obtain
