@@ -1,8 +1,12 @@
 # macOS
 .DS_Store
 
-# Office temp files
+# PowerPoint sources and Office temporary files
+*.pptx
 ~$*
+
+# Licensed publisher download; share the DOI in references/README.md instead
+/references/how-inefficient-can-an-electricity-market-be.pdf
 
 # Python
 __pycache__/
