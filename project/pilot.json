@@ -1,0 +1,14 @@
+{
+  "name": "three-generator-pilot",
+  "interval_hours": 1,
+  "demand_mwh": 1148.4,
+  "capacities_mwh": [700, 700, 700],
+  "true_cost_coefficients": [0.02, 0.04, 0.06],
+  "blocks_per_generator": 3,
+  "bid_coefficients": [0.01, 0.02, 0.04, 0.06, 0.08, 0.16, 0.32],
+  "tolerances": {
+    "balance_mwh": 1e-8,
+    "cost_eur": 1e-6,
+    "marginal_price_eur_per_mwh": 1e-9
+  }
+}

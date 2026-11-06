@@ -61,26 +61,41 @@ graphical results, and interpretation rather than lengthy algorithm explanations
 See the [work plan](work-plan.md) for milestones, validation gates, numerical
 settings to record, and the proposed report structure.
 
-## Calculator
+## Run the pilot
 
-The standard-library Python calculator implements positive fully quadratic bids,
-capacity-constrained clearing, and physical optima for quadratic and block costs.
-The approved pilot uses true coefficients `(0.02, 0.04, 0.06)` and three equal
-blocks per generator. Costs are synthetic, not calibrated Danish costs.
+The standard-library Python pilot implements positive fully quadratic bids,
+capacity-constrained clearing, physical optima, and all 343 bid-profile payoffs.
+The [configuration](pilot.json) uses true coefficients `(0.02, 0.04, 0.06)`,
+three equal blocks, and seven shared bid choices. Costs are synthetic, not
+calibrated Danish costs.
 
-Use Python 3.10 or later and run from the repository root:
+Use Python 3.10 or later and Git for provenance; no third-party Python packages
+are required. Run from the repository root:
 
 ```bash
 python3 -m unittest discover -s project/tests -v
+python3 -m project.run_pilot
 ```
+
+The runner writes `project/results/payoffs.csv`, `benchmarks.json`, and
+`metadata.json`. The table records shared prices/dispatches and separate true
+costs/profits for both cases. Benchmarks report physical and grid-attainable
+optima, not equilibrium inefficiency.
+
+The metadata records exact inputs, tolerances, source hashes, and the latest
+commit touching the calculator/generator code. Uncommitted source changes are
+flagged. Local timing, Python version, and the run command are saved separately
+in Git-ignored `run-info.json`, so scientific artifacts regenerate deterministically.
+
+Balance/capacity checks use `1e-8` MWh, cost checks `1e-6` EUR, and marginal-price
+checks `1e-9` EUR/MWh. These are validation tolerances; there is no LP solver yet.
 
 Quantities are MWh over the one-hour interval; prices are EUR/MWh and costs are
 EUR. Block costs interpolate the quadratic at four equally spaced knots.
 Physical block-cost ties use generator order; quadratic bid clearing has a
 unique dispatch. At full aggregate capacity, use the smallest valid dual price.
 
-Payoff-table generation is the next stage. CCE and PoA-bound solvers are not
-implemented yet.
+CCE and PoA-bound solvers are not implemented yet.
 
 ## Background references
 

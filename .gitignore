@@ -11,3 +11,6 @@ venv/
 # Editors
 .vscode/
 .idea/
+
+# Local run timestamps, timing, and environment; scientific outputs are tracked.
+project/results/run-info.json

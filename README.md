@@ -2,7 +2,8 @@
 
 Shared course materials and a workspace for the course project. Course materials
 are stored as PDFs; project planning is written in Markdown. The project now
-includes a small Python market calculator and focused verification tests.
+includes a standard-library Python calculator, reproducible payoff tables,
+and focused verification tests.
 
 ## Structure
 
@@ -11,7 +12,7 @@ includes a small Python market calculator and focused verification tests.
 | [lectures/](lectures/) | Weekly lecture slides |
 | [exercises/](exercises/) | Weekly exercise sheets |
 | [references/](references/README.md) | Algorithm notes, paper citations, and access links |
-| [project/](project/README.md) | Project brief, calculator, tests, and delivery plan |
+| [project/](project/README.md) | Project brief, pilot calculator/payoffs, tests, and delivery plan |
 
 ## Weekly materials
 

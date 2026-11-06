@@ -1,9 +1,9 @@
 # Project Work Plan
 
 The [project brief](README.md) defines the topic and research questions.
-This plan turns them into deliverables. The market-and-cost calculator is
-implemented with analytic verification tests. Payoff-table generation is next;
-CCE, PoA bounds, and the main experiments remain pending.
+This plan turns them into deliverables. The calculator, analytic verification
+tests, and reproducible payoff-table generator are implemented. CCE, PoA bounds,
+and the main experiments remain pending.
 
 ## Submission requirements
 
@@ -83,6 +83,11 @@ Record with every run:
 Generate tables and figures from committed scripts/configurations rather than
 manual transcription. Record actual numerical settings and distinguish
 benchmark calculations from equilibrium results.
+
+The pilot records validation tolerances in `pilot.json`, code revision and
+source/configuration hashes in `results/metadata.json`, and actual residuals in
+`results/benchmarks.json`. Local runtime/environment records stay in ignored
+`results/run-info.json`. No solver tolerances or equilibrium results exist yet.
 
 ## Results-focused report
 
