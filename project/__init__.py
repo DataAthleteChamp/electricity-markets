@@ -1,0 +1,1 @@
+"""Finite electricity-market pilot."""

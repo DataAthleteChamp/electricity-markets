@@ -1,8 +1,9 @@
 # Project Work Plan
 
 The [project brief](README.md) defines the topic and research questions.
-This plan turns them into deliverables. Implementation and experiments have
-not started; model choices below are recommendations until agreed.
+This plan turns them into deliverables. The market-and-cost calculator is
+implemented with analytic verification tests. Payoff-table generation is next;
+CCE, PoA bounds, and the main experiments remain pending.
 
 ## Submission requirements
 
@@ -45,11 +46,12 @@ Complete each validation gate before expanding the experiments.
   test wider bounds. Retain the original actions and truthful quadratic bids.
 - **No extra axes:** no mismatch-severity, block-count, or scarcity sweep.
 
-Constructing block costs by joining each quadratic curve at four fixed,
-equally spaced knots (three blocks), and using seven bid choices per generator,
-are starting recommendations, not final settings. Seven choices give 343 joint
-profiles with three generators and 2,401 with four. Define the actual values
-before implementation.
+The approved pilot constructs block costs by joining each quadratic curve at
+four fixed, equally spaced knots (three blocks). Its true quadratic coefficients
+are `(0.02, 0.04, 0.06)`, with shared bid choices
+`(0.01, 0.02, 0.04, 0.06, 0.08, 0.16, 0.32)`. Seven choices give 343 joint
+profiles with three generators and 2,401 with four. Other cost configurations
+and robustness settings still need to be fixed before the main experiments.
 
 ## Validation and experiment records
 
@@ -79,8 +81,8 @@ Record with every run:
 | Reproducibility | Configuration and code commit, run command, runtime, random seed if applicable, and output locations. |
 
 Generate tables and figures from committed scripts/configurations rather than
-manual transcription. Numerical tolerances and final grid values are still to
-be chosen; do not report proposed settings as completed runs.
+manual transcription. Record actual numerical settings and distinguish
+benchmark calculations from equilibrium results.
 
 ## Results-focused report
 

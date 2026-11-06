@@ -1,8 +1,8 @@
 # Electricity Markets (DTU)
 
 Shared course materials and a workspace for the course project. Course materials
-are stored as PDFs; project planning is written in Markdown. No implementation
-code is included at this stage.
+are stored as PDFs; project planning is written in Markdown. The project now
+includes a small Python market calculator and focused verification tests.
 
 ## Structure
 
@@ -11,7 +11,7 @@ code is included at this stage.
 | [lectures/](lectures/) | Weekly lecture slides |
 | [exercises/](exercises/) | Weekly exercise sheets |
 | [references/](references/README.md) | Algorithm notes, paper citations, and access links |
-| [project/](project/README.md) | Project brief, work plan, and report requirements |
+| [project/](project/README.md) | Project brief, calculator, tests, and delivery plan |
 
 ## Weekly materials
 
@@ -44,8 +44,8 @@ milestones and report requirements.
 - Use lowercase, hyphenated filenames with zero-padded weeks, such as
   `week-06-slides.pdf` and `week-06-tasks.pdf`.
 - Keep one canonical copy of each document; do not add `final-v2` duplicates.
-- Do not add PowerPoint files or the retired exercise scripts. Project code can
-  be introduced once the modelling and implementation plan is agreed.
+- Do not add PowerPoint files or the retired exercise scripts. Keep new project
+  code focused on the agreed model and validate each stage before expanding it.
 - Add paper PDFs only when sharing is permitted. Otherwise, add a citation and
   access link to the [reference guide](references/README.md).
 

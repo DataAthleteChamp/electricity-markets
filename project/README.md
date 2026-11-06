@@ -59,8 +59,28 @@ standard LaTeX pages excluding the title page**. Focus on the experiment setup,
 graphical results, and interpretation rather than lengthy algorithm explanations.
 
 See the [work plan](work-plan.md) for milestones, validation gates, numerical
-settings to record, and the proposed report structure. The next deliverable is
-the agreed mathematical specification; implementation has not started.
+settings to record, and the proposed report structure.
+
+## Calculator
+
+The standard-library Python calculator implements positive fully quadratic bids,
+capacity-constrained clearing, and physical optima for quadratic and block costs.
+The approved pilot uses true coefficients `(0.02, 0.04, 0.06)` and three equal
+blocks per generator. Costs are synthetic, not calibrated Danish costs.
+
+Use Python 3.10 or later and run from the repository root:
+
+```bash
+python3 -m unittest discover -s project/tests -v
+```
+
+Quantities are MWh over the one-hour interval; prices are EUR/MWh and costs are
+EUR. Block costs interpolate the quadratic at four equally spaced knots.
+Physical block-cost ties use generator order; quadratic bid clearing has a
+unique dispatch. At full aggregate capacity, use the smallest valid dual price.
+
+Payoff-table generation is the next stage. CCE and PoA-bound solvers are not
+implemented yet.
 
 ## Background references
 
