@@ -1,9 +1,10 @@
 # Project Work Plan
 
 The [project brief](README.md) defines the topic and research questions.
-This plan turns them into deliverables. The calculator, analytic verification
-tests, and reproducible payoff-table generator are implemented. CCE, PoA bounds,
-and the main experiments remain pending.
+This plan turns them into deliverables. The calculator and payoff generator are
+implemented: 15 tests pass and all 343 pilot profiles have been generated,
+validated, and regenerated identically. CCE, PoA bounds, and the main experiments
+remain pending.
 
 ## Submission requirements
 

@@ -1,0 +1,79 @@
+{
+  "cases": {
+    "block": {
+      "attainability_ratio": 1.0057526768843166,
+      "grid_attainable": {
+        "bids_eur_per_mwh2": [
+          0.02,
+          0.06,
+          0.06
+        ],
+        "profile_id": 73,
+        "quantities_mwh": [
+          689.04,
+          229.68,
+          229.68
+        ],
+        "total_cost_eur": 7451.733333333334
+      },
+      "physical_optimum": {
+        "quantities_mwh": [
+          681.7333333333333,
+          233.33333333333334,
+          233.33333333333334
+        ],
+        "total_cost_eur": 7409.111111111111
+      }
+    },
+    "quadratic": {
+      "attainability_ratio": 1.0,
+      "grid_attainable": {
+        "bids_eur_per_mwh2": [
+          0.02,
+          0.04,
+          0.06
+        ],
+        "profile_id": 66,
+        "quantities_mwh": [
+          626.4,
+          313.2,
+          208.8
+        ],
+        "total_cost_eur": 7193.5776
+      },
+      "physical_optimum": {
+        "quantities_mwh": [
+          626.4,
+          313.2,
+          208.8
+        ],
+        "total_cost_eur": 7193.5776
+      }
+    }
+  },
+  "diagnostics": {
+    "max_balance_residual_mwh": 2.2737367544323206e-13,
+    "max_capacity_violation_mwh": 0.0,
+    "max_marginal_residual_eur_per_mwh": 3.552713678800501e-15,
+    "truthful_quadratic_cost_residual_eur": 0.0
+  },
+  "quadratic_reference_profile": {
+    "bid_1_eur_per_mwh2": 0.02,
+    "bid_2_eur_per_mwh2": 0.04,
+    "bid_3_eur_per_mwh2": 0.06,
+    "block_cost_eur": 7709.955555555555,
+    "block_profit_1_eur": 3806.205866666667,
+    "block_profit_2_eur": 1716.7473777777782,
+    "block_profit_3_eur": 1154.2464000000002,
+    "output_1_mwh": 626.4,
+    "output_2_mwh": 313.2,
+    "output_3_mwh": 208.8,
+    "price_eur_per_mwh": 12.528,
+    "profile_id": 66,
+    "quadratic_cost_eur": 7193.5776,
+    "quadratic_profit_1_eur": 3923.7696000000005,
+    "quadratic_profit_2_eur": 1961.8848000000003,
+    "quadratic_profit_3_eur": 1307.9232000000004
+  },
+  "scope": "physical_and_grid_attainability_only"
+}

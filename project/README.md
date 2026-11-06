@@ -77,10 +77,11 @@ python3 -m unittest discover -s project/tests -v
 python3 -m project.run_pilot
 ```
 
-The runner writes `project/results/payoffs.csv`, `benchmarks.json`, and
-`metadata.json`. The table records shared prices/dispatches and separate true
-costs/profits for both cases. Benchmarks report physical and grid-attainable
-optima, not equilibrium inefficiency.
+The runner writes the [payoff table](results/payoffs.csv),
+[benchmarks](results/benchmarks.json), and [metadata](results/metadata.json).
+The table records shared prices/dispatches and separate true costs/profits for
+both cases. Benchmarks report physical and grid-attainable optima, not
+equilibrium inefficiency. All 343 profiles have been generated and validated.
 
 The metadata records exact inputs, tolerances, source hashes, and the latest
 commit touching the calculator/generator code. Uncommitted source changes are
@@ -95,7 +96,10 @@ EUR. Block costs interpolate the quadratic at four equally spaced knots.
 Physical block-cost ties use generator order; quadratic bid clearing has a
 unique dispatch. At full aggregate capacity, use the smallest valid dual price.
 
-CCE and PoA-bound solvers are not implemented yet.
+The calculator and table generator pass 15 tests, including independent
+cost/profit checks for every profile and deterministic regeneration.
+The next milestone is the worst-CCE LP; the PoA-bound solver follows separately.
+Neither calculation is implemented yet.
 
 ## Background references
 

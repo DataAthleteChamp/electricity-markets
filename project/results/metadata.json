@@ -1,0 +1,49 @@
+{
+  "bid_points_per_generator": 7,
+  "block_optimum_method": "merit_order_with_generator_order_ties",
+  "clearing_method": "capacity_constrained_water_filling",
+  "code_revision": "0ddf0200449d089e05f08f63b1154026276130a7",
+  "configuration": {
+    "bid_coefficients": [
+      0.01,
+      0.02,
+      0.04,
+      0.06,
+      0.08,
+      0.16,
+      0.32
+    ],
+    "blocks_per_generator": 3,
+    "capacities_mwh": [
+      700,
+      700,
+      700
+    ],
+    "demand_mwh": 1148.4,
+    "interval_hours": 1,
+    "name": "three-generator-pilot",
+    "tolerances": {
+      "balance_mwh": 1e-08,
+      "cost_eur": 1e-06,
+      "marginal_price_eur_per_mwh": 1e-09
+    },
+    "true_cost_coefficients": [
+      0.02,
+      0.04,
+      0.06
+    ]
+  },
+  "configuration_sha256": "3111e29e2f694b1ca08dc3840e8687125ce774e9982cd575d5d8b9cbec4e239a",
+  "equilibria_computed": false,
+  "generator_count": 3,
+  "grid_cost_tie_rule": "first_profile_in_lexicographic_bid_order",
+  "profile_count": 343,
+  "scenario": "three-generator-pilot",
+  "solver": null,
+  "source_sha256": {
+    "project/__init__.py": "3bae55c013e58a5b49eb2268c135613d151d8cb94c5b31ec5e17226512b77570",
+    "project/model.py": "5a8f00086aec27c6f157cf17df9281c1e42971bbaa666bc0229ac13bec971923",
+    "project/run_pilot.py": "4a8a78f7f74683faba2113fbe36a874d8698af27bd916b243282cdd49a960dc9"
+  },
+  "uncommitted_source_changes": false
+}
