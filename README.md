@@ -11,7 +11,7 @@ code is included at this stage.
 | [lectures/](lectures/) | Weekly lecture slides |
 | [exercises/](exercises/) | Weekly exercise sheets |
 | [references/](references/README.md) | Algorithm notes, paper citations, and access links |
-| [project/](project/README.md) | Project question, scope, and decisions to agree before coding |
+| [project/](project/README.md) | Project brief, work plan, and report requirements |
 
 ## Weekly materials
 
@@ -32,7 +32,8 @@ true costs. It studies worst-CCE production-cost inefficiency and valid PoA
 bounds, without a mismatch-severity sweep.
 
 See the [project brief](project/README.md) for the controlled comparison, modelling
-decisions, and scope.
+decisions, and scope, and the [work plan](project/work-plan.md) for delivery
+milestones and report requirements.
 
 ## Working together
 
@@ -54,6 +55,6 @@ This repository is public. Add materials only when you are authorized to share
 them publicly. Removing a file from the current layout does not remove it from
 Git history.
 
-The repository owner manages collaborator invitations. Licensed publisher
-downloads are not included in the shared repository; team members should obtain
-them through the access links using their own authorized access.
+The repository owner manages collaborator invitations. Shared paper PDFs require
+permission for public redistribution; the [reference guide](references/README.md)
+lists available copies and publisher access links.

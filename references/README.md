@@ -28,9 +28,9 @@ The paper studies worst-case equilibrium inefficiency across generators' true
 cost functions. It is useful background, not a result establishing the effect of
 the cost/bid-language mismatch in our project.
 
-The licensed publisher PDF is intentionally excluded from Git. A local copy may
-be present as `how-inefficient-can-an-electricity-market-be.pdf`; each team member
-should use their own authorized access through the links above.
+The [paper PDF](how-inefficient-can-an-electricity-market-be.pdf) is included in
+the repository. The repository owner has confirmed permission to share this
+copy publicly; this does not establish permission to redistribute other papers.
 
 ## Adding references
 

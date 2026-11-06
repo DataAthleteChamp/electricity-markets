@@ -52,6 +52,16 @@ No mismatch-severity measurement or scarcity sweep is included, and an increase
 in inefficiency is not assumed. Conclusions concern the selected cost models
 and finite bid grid, not a certified PoA for continuous bidding.
 
+## Delivery plan
+
+The report is due **14 December 2026 at 23:59:59**, with a maximum of **eight
+standard LaTeX pages excluding the title page**. Focus on the experiment setup,
+graphical results, and interpretation rather than lengthy algorithm explanations.
+
+See the [work plan](work-plan.md) for milestones, validation gates, numerical
+settings to record, and the proposed report structure. The next deliverable is
+the agreed mathematical specification; implementation has not started.
+
 ## Background references
 
 [Research paper](../references/how-inefficient-can-an-electricity-market-be.pdf),
